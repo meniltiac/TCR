@@ -2,7 +2,8 @@ function addTCRMenu() {
   SpreadsheetApp.getUi()
     .createMenu('Coachella Review')
     .addItem('Add New Reader Sheets', 'createReaderSheetsFromTemplate')
-    .addItem('Assign New Submissions', 'assignNewSubmissions')
-    .addItem('Update Yes List', 'copyQueriesToYesList')
+    .addItem('Assign Submissions', 'assignNewSubmissions')
+    .addItem('Update Yes List', 'syncReaderDecisionsToYesList')
+    .addItem('Update Submissions Main', 'syncDecisionsToMain')
     .addToUi();
 }

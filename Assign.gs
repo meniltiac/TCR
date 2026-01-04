@@ -29,6 +29,9 @@ function assignNewSubmissions() {
     const authorName = authorData[index][0];
 
     if (reader && titleRT && titleRT.getText()) {
+      // Update Column E (5) to "Assigned" for this specific row
+      mainSheet.getRange(index + 2, 5).setValue("Assigned");
+
       if (!assignments[reader]) assignments[reader] = [];
       // We store both the RichText Title and the Author string
       assignments[reader].push({ title: titleRT, author: authorName });
@@ -82,4 +85,5 @@ function assignNewSubmissions() {
       continue;
     }
   }
+  SpreadsheetApp.getUi().alert("Submissions Assigned!");
 }
